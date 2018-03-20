@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ProductModel } from './list-product/list-product.model';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class DataService {
@@ -33,5 +35,7 @@ export class DataService {
   getProducts(): Array<ProductModel> {
     return this.products;
   }
+
+
 
 }
