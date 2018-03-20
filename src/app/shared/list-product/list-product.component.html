@@ -1,0 +1,27 @@
+<div class="container">
+<h6>List of Products</h6>
+<div *ngIf="listProduct.length != 0; else emptyList">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listProduct">
+                    <td>{{ item.id | product }}</td>
+                    <td>{{ item.description }}</td>
+                </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="row justify-content-center">
+    <button class="btn btn-success col-xs-2" (click)="emitEvent()">Reverse list</button>
+    </div>
+</div>
+<ng-template #emptyList>
+    <div class="alert alert-danger">No data found</div>
+</ng-template>
+</div>
